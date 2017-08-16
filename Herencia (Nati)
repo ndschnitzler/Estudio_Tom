@@ -1,0 +1,130 @@
+class Bodega:
+    
+    def __init__(self):
+        self.objetos = []
+    
+    def agregar(self):
+        sefl.objetos.append(objeto)
+    
+    def mostrar(self):
+        for objeto in self.objetos:
+            objeto.descripcion()
+class Objeto:
+    
+    def __init__(self,peso,volumen):
+        self.volumen = volumen
+        self.peso = peso
+    
+    def descripcion(self):
+        print("{},{}".format(self.peso,self.volumen))
+#creamos clase padre
+
+class Electronico(Objeto):
+    
+    def __init__(self,voltaje,consumo):
+        self.voltaje = voltaje
+        self.consumo_energetico = consumo_energetico
+        super().__init__()
+#clase hijo
+    def descripcion(self):
+        print("{},{}".format(self.peso,self.volumen))
+
+class Vestible(Objeto):
+    def __init__(self,talla,material):
+        self.talla = talla
+        self.material = material
+        super().__init__()
+  
+    def descripcion(self):
+        print("{},{}".format(self.talla,self.tipomaterial))
+        
+class Lujo(Objeto):
+    def __init__(self,costo):
+        self.costo = costo
+        super().__init__()
+    
+    def descripcion(self):
+        print("{}".format(self.costo))
+
+class Ilicito(Objeto):
+    def __init__(self,mensaje):
+        self.mensaje = mensaje
+        super().__init__()
+    
+    def descripcion(self):
+        print("{}".format(self.mensaje))
+
+class Domestico(Objeto):
+    def __init__(self,reseña):
+        self.reseña = reseña
+        super().__init__()
+    
+    def descripcion(self):
+        print("{}".format(self.reseña))
+
+
+class ObraDeArte(Objeto):
+    def __init__(self,nombre,autor,año):
+        self.nombre = nombre
+        self.autor = autor
+        self.año = año
+        super().__init__()
+    
+    def descripcion(self):
+        print("{},{},{}".format(self.nombre,self.autor,self.año))
+
+
+class Comestible(Objeto):
+    def __init__(self,calorias):
+        self.calorias = calorias
+        super().__init__()
+    
+    def descripcion(self):
+        print("{}".format(self.calorias))
+
+class MonaLisa(ObraDeArte,Ilicito):
+    def __init__(self):
+        super().__init__(nombre ="Mona Lisa",autor="Da Vinci",año="1902",volumen="200 cc",peso="3 kg")
+   
+    def descripcion(self):
+        super().descripcion()
+        print("{}".format(self.nombre))
+        
+class AppleWatchDorado(Lujo, Vestible, Electronico):
+
+    def __init__(self):
+        super().__init__(costo="US$ 10000",
+                         talla="Cualquiera",
+                         material="oro",
+                         voltaje="3.7 V",
+                         consumo="0.1 Wh",
+                         volumen="50 cc",
+                         peso="30 gr")
+
+    def descripcion(self):
+        super().descripcion()
+
+
+class PapasFritas(Comestible):
+
+    def __init__(self):
+        super().__init__(calorias="300 cal",
+                         volumen="50 L",
+                         peso="50 kg")
+
+    def descripcion(self):
+        super().descripcion()
+
+
+class Refrigerador(Electronico, Domestico):
+
+    def __init__(self):
+        super().__init__(reseña=("Inventado por el hombre "
+                                 "para uno de sus grandes problemas"),
+                         voltaje="220 V",
+                         consumo="0.1 Wh",
+                         volumen="400L",
+                         peso="100 kg")
+
+    def descripcion(self):
+        super().descripcion()
